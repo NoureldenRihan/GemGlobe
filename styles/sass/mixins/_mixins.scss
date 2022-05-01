@@ -1,0 +1,26 @@
+@mixin GridCreator($columns, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(900px / $columns, 1fr));
+  gap: $gap;
+}
+
+@mixin FlexCreator($direction, $justifyState) {
+  display: flex;
+  @if $direction == "row" {
+    flex-direction: row;
+    align-items: center;
+    @if $justifyState == "center" {
+      justify-content: center;
+    } @else if $justifyState == "around" {
+      justify-content: space-around;
+    } @else if $justifyState == "between" {
+      justify-content: space-between;
+    } @else if $justifyState == "evenly" {
+      justify-content: space-evenly;
+    }
+  } @else if $direction == "column" {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

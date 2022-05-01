@@ -1,0 +1,97 @@
+@import "../mixins/mixins";
+@import "../variables/color-transitions";
+@import "../variables/responsive_containers";
+
+nav {
+  border-bottom: 1px solid $lightgray-color;
+
+  .container {
+    @include FlexCreator("row", "around");
+    text-align: center;
+    padding: 10px;
+
+    .c3 {
+      width: 100% / 3;
+    }
+
+    .search-area {
+      @include FlexCreator("row", "around");
+      background-color: $lightgray-color;
+      border-radius: 7px;
+      width: fit-content;
+      margin: auto;
+      padding: 8px;
+
+      .search-icon {
+        .icon {
+          font-size: 15px;
+        }
+      }
+
+      @media (max-width: $smallScreens) {
+        display: none;
+      }
+
+      .search {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        margin-left: 15px;
+      }
+    }
+    .nav-icons {
+      @include FlexCreator("row", "around");
+
+      .icon {
+        font-size: 25px;
+        padding: 3px;
+        margin-right: 20px;
+        cursor: pointer;
+        position: relative;
+        transition: $low-transition;
+
+        &:hover {
+          transform: translateY(2px);
+        }
+      }
+
+      .notify::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 13px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: red;
+      }
+
+      .icon-img {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        border-radius: 50%;
+        border: 2px solid red;
+        padding: 3px;
+      }
+    }
+  }
+}
+
+.non-nav {
+  background-color: rgb(244, 244, 244);
+
+  .content-area {
+    @include FlexCreator("row", "evenly");
+
+    .feed {
+      @include FlexCreator("column", "center");
+      width: 70%;
+    }
+
+    .info {
+      @include FlexCreator("column", "center");
+      width: 30%;
+    }
+  }
+}
