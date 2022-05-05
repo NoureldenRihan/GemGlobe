@@ -83,6 +83,12 @@ button {
 
 /* End Components */
 nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 1000;
   border-bottom: 1px solid #efefef;
 }
 
@@ -246,15 +252,14 @@ nav .container .nav-icons .icon-img {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  padding: 20px;
   background-color: white;
   border: 1px solid #dbdbdb;
   border-radius: 10px;
   width: 100%;
-  overflow: hidden;
   margin-top: 10px;
-  height: 113px;
   overflow: hidden;
+  padding: 20px;
+  height: 113px;
 }
 
 .non-nav .content-area .feed .stories .story-layout {
@@ -298,6 +303,273 @@ nav .container .nav-icons .icon-img {
 
 .non-nav .content-area .feed .stories .story-layout .story .story-img {
   border-radius: 50%;
+}
+
+.non-nav .content-area .feed .posts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.non-nav .content-area .feed .posts .post {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.non-nav .content-area .feed .posts .post .user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 0 15px;
+  margin-top: 10px;
+}
+
+.non-nav .content-area .feed .posts .post .user-info .post-user-image-holder {
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 1px;
+  border: 2px solid blue;
+}
+
+.non-nav .content-area .feed .posts .post .user-info .post-user-image-holder .post-user-img {
+  border-radius: 50%;
+}
+
+.non-nav .content-area .feed .posts .post .user-info .details {
+  width: 100%;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.non-nav .content-area .feed .posts .post .user-info .details h2,
+.non-nav .content-area .feed .posts .post .user-info .details h4 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.non-nav .content-area .feed .posts .post .user-info .details h4 {
+  color: #777;
+}
+
+.non-nav .content-area .feed .posts .post .user-info .icon {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.non-nav .content-area .feed .posts .post .images .post-img {
+  width: 100%;
+}
+
+.non-nav .content-area .feed .posts .post .likes {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.non-nav .content-area .feed .posts .post .likes .icons {
+  width: 100%;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.non-nav .content-area .feed .posts .post .likes .icons .left,
+.non-nav .content-area .feed .posts .post .likes .icons .right {
+  font-size: 25px;
+}
+
+.non-nav .content-area .feed .posts .post .likes .icons .left .icon,
+.non-nav .content-area .feed .posts .post .likes .icons .right .icon {
+  cursor: pointer;
+}
+
+.non-nav .content-area .feed .posts .post .likes .icons .left .icon:hover,
+.non-nav .content-area .feed .posts .post .likes .icons .right .icon:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.non-nav .content-area .feed .posts .post .likes .icons .left .icon:not(:last-child) {
+  margin-right: 15px;
+}
+
+.non-nav .content-area .feed .posts .post .likes .total-likes {
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.non-nav .content-area .feed .posts .post .post-details {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.non-nav .content-area .feed .posts .post .post-details h4 {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.non-nav .content-area .feed .posts .post .post-details h4 p {
+  display: inline-block;
+  margin-right: 3px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.non-nav .content-area .feed .posts .post .post-details h4 p a {
+  color: black;
+}
+
+.non-nav .content-area .feed .posts .post .comments {
+  width: 100%;
+  padding: 0 15px;
+  margin-top: 20px;
+}
+
+.non-nav .content-area .feed .posts .post .comments .comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.non-nav .content-area .feed .posts .post .comments .comment h4 {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.non-nav .content-area .feed .posts .post .comments .comment h4 p {
+  display: inline-block;
+  margin-right: 3px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.non-nav .content-area .feed .posts .post .comments .comment h4 p a {
+  color: black;
+}
+
+.non-nav .content-area .feed .posts .post .comments .comment h4 p a:hover {
+  text-decoration: underline;
+}
+
+.non-nav .content-area .feed .posts .post .comments .comment .icon {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.non-nav .content-area .feed .posts .post .comments .comment .icon:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.non-nav .content-area .feed .posts .post .add-comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 0 15px;
+  border-top: 1px solid #dbdbdb;
+}
+
+.non-nav .content-area .feed .posts .post .add-comment textarea {
+  width: 100%;
+  outline: 0;
+  border: 0;
+  margin: 15px 0;
+  padding: 5px;
+  resize: none;
+  height: 30px;
+}
+
+.non-nav .content-area .feed .posts .post .add-comment h3 {
+  padding: 8px;
+  font-size: 15px;
+}
+
+.non-nav .content-area .feed .posts .post .add-comment h3.disabled {
+  cursor: auto;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.non-nav .content-area .feed .posts .post .add-comment h3.enabled {
+  cursor: pointer;
+  color: black;
 }
 
 .non-nav .content-area .info {

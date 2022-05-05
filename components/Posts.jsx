@@ -1,9 +1,16 @@
 import React, { Component } from "react";
+import Post from "./Post";
 
 class Posts extends Component {
   state = {};
   render() {
-    return <div>jj</div>;
+    return (
+      <div className="posts">
+        <Post />
+        <Post />
+        <Post />
+      </div>
+    );
   }
 }
 
