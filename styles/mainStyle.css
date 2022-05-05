@@ -230,7 +230,74 @@ nav .container .nav-icons .icon-img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 70%;
+  width: 60%;
+}
+
+.non-nav .content-area .feed .stories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10px;
+  height: 113px;
+  overflow: hidden;
+}
+
+.non-nav .content-area .feed .stories .story-layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70px;
+  overflow: hidden;
+  position: relative;
+}
+
+.non-nav .content-area .feed .stories .story-layout::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.non-nav .content-area .feed .stories .story-layout .story {
+  display: inline-block;
+  padding: 5px;
+  margin-bottom: 3px;
+  border-radius: 50%;
+  border: 2px solid blue;
+  position: relative;
+  cursor: pointer;
+}
+
+.non-nav .content-area .feed .stories .story-layout .story .story-img {
+  border-radius: 50%;
 }
 
 .non-nav .content-area .info {
@@ -247,6 +314,6 @@ nav .container .nav-icons .icon-img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 30%;
+  width: 40%;
 }
 /*# sourceMappingURL=mainStyle.css.map */
