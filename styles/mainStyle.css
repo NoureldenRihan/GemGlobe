@@ -207,19 +207,11 @@ nav .container .nav-icons .icon-img {
 }
 
 .non-nav .content-area {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60% 40%;
+      grid-template-columns: 60% 40%;
+  gap: 20px;
 }
 
 .non-nav .content-area .feed {
@@ -236,7 +228,6 @@ nav .container .nav-icons .icon-img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 60%;
 }
 
 .non-nav .content-area .feed .stories {
@@ -572,7 +563,7 @@ nav .container .nav-icons .icon-img {
   color: black;
 }
 
-.non-nav .content-area .info {
+.non-nav .content-area .side-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -586,6 +577,160 @@ nav .container .nav-icons .icon-img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 40%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.non-nav .content-area .side-info .user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.non-nav .content-area .side-info .user-info .mini-user-image-holder {
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 1px;
+  border: 2px solid blue;
+}
+
+.non-nav .content-area .side-info .user-info .mini-user-image-holder .mini-user-img {
+  border-radius: 50%;
+}
+
+.non-nav .content-area .side-info .user-info .details {
+  width: 100%;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.non-nav .content-area .side-info .user-info .details h2,
+.non-nav .content-area .side-info .user-info .details h4 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.non-nav .content-area .side-info .user-info .details h4 {
+  color: #777;
+}
+
+.non-nav .content-area .side-info .follow-suggests {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 10px;
+  overflow: hidden;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.non-nav .content-area .side-info .follow-suggests .heading {
+  font-size: 25px;
+  padding: 15px 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.non-nav .content-area .side-info .follow-suggests .suggest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.non-nav .content-area .side-info .follow-suggests .suggest:first-child {
+  margin-top: 10px;
+}
+
+.non-nav .content-area .side-info .follow-suggests .suggest .mini-user-image-holder {
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 1px;
+  border: 2px solid blue;
+}
+
+.non-nav .content-area .side-info .follow-suggests .suggest .mini-user-image-holder .mini-user-img {
+  border-radius: 50%;
+}
+
+.non-nav .content-area .side-info .follow-suggests .suggest .details {
+  width: 100%;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.non-nav .content-area .side-info .follow-suggests .suggest .details h2,
+.non-nav .content-area .side-info .follow-suggests .suggest .details h4 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.non-nav .content-area .side-info .follow-suggests .suggest .details h4 {
+  color: #777;
+}
+
+.non-nav .content-area .side-info .follow-suggests .suggest .details h2:hover {
+  text-decoration: underline;
+}
+
+.non-nav .content-area .side-info .follow-suggests .suggest .follow {
+  cursor: pointer;
+}
+
+.non-nav .content-area .side-info .app-info {
+  margin-top: 10px;
+  width: 100%;
+  padding: 0 15px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.non-nav .content-area .side-info .app-info h3 {
+  margin-top: 5px;
+}
+
+.non-nav .content-area .side-info .app-info h3 a {
+  color: black;
+}
+
+.non-nav .content-area .side-info .app-info h3 a:hover {
+  text-decoration: underline;
+}
+
+.non-nav .content-area .side-info .app-info p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
 }
 /*# sourceMappingURL=mainStyle.css.map */

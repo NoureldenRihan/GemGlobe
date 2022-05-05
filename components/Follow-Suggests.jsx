@@ -1,9 +1,18 @@
 import React, { Component } from "react";
+import UserSuggest from "./UserSuggest";
 
 class FollowSuggests extends Component {
   state = {};
   render() {
-    return <div>h</div>;
+    return (
+      <div className="follow-suggests">
+        <h2 className="heading">Suggestions</h2>
+        <UserSuggest />
+        <UserSuggest />
+        <UserSuggest />
+        <UserSuggest />
+      </div>
+    );
   }
 }
 

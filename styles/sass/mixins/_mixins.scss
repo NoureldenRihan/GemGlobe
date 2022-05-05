@@ -17,6 +17,10 @@
       justify-content: space-between;
     } @else if $justifyState == "evenly" {
       justify-content: space-evenly;
+    } @else if $justifyState == "start" {
+      justify-content: flex-start;
+    } @else if $justifyState == "end" {
+      justify-content: flex-end;
     }
   } @else if $direction == "column" {
     flex-direction: column;

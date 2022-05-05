@@ -17,7 +17,7 @@ export default function Main() {
               <Stories />
               <Posts />
             </div>
-            <div className="info">
+            <div className="side-info">
               <UserInfo />
               <FollowSuggests />
               <AppInfo />

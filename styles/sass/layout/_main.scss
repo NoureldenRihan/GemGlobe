@@ -87,11 +87,12 @@ nav {
   background-color: rgb(244, 244, 244);
 
   .content-area {
-    @include FlexCreator("row", "evenly");
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 20px;
 
     .feed {
       @include FlexCreator("column", "center");
-      width: 60%;
 
       .stories {
         @include FlexCreator("row", "around");
@@ -319,9 +320,126 @@ nav {
       }
     }
 
-    .info {
+    .side-info {
       @include FlexCreator("column", "center");
-      width: 40%;
+      justify-content: flex-start;
+      margin-top: 10px;
+      padding: 20px;
+
+      .user-info {
+        @include FlexCreator("row", "start");
+        width: 100%;
+
+        .mini-user-image-holder {
+          cursor: pointer;
+          border-radius: 50%;
+          padding: 1px;
+          border: 2px solid blue;
+
+          .mini-user-img {
+            border-radius: 50%;
+          }
+        }
+
+        .details {
+          width: 100%;
+          text-align: left;
+          margin-left: 10px;
+
+          h2,
+          h4 {
+            width: fit-content;
+            padding: 2px;
+            cursor: pointer;
+          }
+
+          h4 {
+            color: $gray-color;
+          }
+        }
+      }
+
+      .follow-suggests {
+        @include Section;
+        width: 100%;
+        padding: 0 15px;
+
+        .heading {
+          font-size: 25px;
+          padding: 15px 0;
+          color: rgba($color: #000000, $alpha: 0.6);
+        }
+
+        .suggest {
+          @include FlexCreator("row", "start");
+          width: 100%;
+          margin-bottom: 10px;
+
+          &:first-child {
+            margin-top: 10px;
+          }
+
+          .mini-user-image-holder {
+            cursor: pointer;
+            border-radius: 50%;
+            padding: 1px;
+            border: 2px solid blue;
+
+            .mini-user-img {
+              border-radius: 50%;
+            }
+          }
+
+          .details {
+            width: 100%;
+            text-align: left;
+            margin-left: 10px;
+
+            h2,
+            h4 {
+              width: fit-content;
+              padding: 2px;
+              cursor: pointer;
+            }
+
+            h4 {
+              color: $gray-color;
+            }
+
+            h2:hover {
+              text-decoration: underline;
+            }
+          }
+
+          .follow {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .app-info {
+        margin-top: 10px;
+        width: 100%;
+        padding: 0 15px;
+        color: rgba($color: #000000, $alpha: 0.5);
+
+        h3 {
+          margin-top: 5px;
+
+          a {
+            color: black;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        p {
+          width: fit-content;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
