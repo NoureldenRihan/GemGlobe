@@ -733,4 +733,241 @@ nav .container .nav-icons .icon-img {
   width: fit-content;
   cursor: pointer;
 }
+
+.user-profile {
+  background-color: #f4f4f4;
+}
+
+.user-profile .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+}
+
+.user-profile .user .user-profile-flex-holder {
+  width: 25%;
+}
+
+.user-profile .user .user-profile-flex-holder .user-profile-img-holder {
+  border-radius: 50%;
+  border: 2px solid blue;
+  padding: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
+.user-profile .user .user-profile-flex-holder .user-profile-img-holder .user-profile-img {
+  border-radius: 50%;
+}
+
+.user-profile .user .user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 75%;
+  margin-left: 150px;
+  margin-right: 200px;
+}
+
+.user-profile .user .user-info .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.user-profile .user .user-info .top h2,
+.user-profile .user .user-info .top button,
+.user-profile .user .user-info .top .icon {
+  cursor: pointer;
+}
+
+.user-profile .user .user-info .top h2 {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.user-profile .user .user-info .top button {
+  outline: 0;
+  border: 0;
+  background-color: gray;
+  color: white;
+  border-radius: 8px;
+  padding: 5px 40px;
+}
+
+.user-profile .user .user-info .top .icon {
+  font-size: 30px;
+}
+
+.user-profile .user .user-info .stats {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.user-profile .user .user-info .stats h3 {
+  font-size: 15px;
+  font-weight: 300;
+  display: inline-block;
+}
+
+.user-profile .user .user-info .stats h3:not(:last-child) {
+  margin-right: 40px;
+}
+
+.user-profile .user .user-info .stats h3 span {
+  font-weight: 700;
+}
+
+.user-profile .user .user-info .details {
+  width: 100%;
+}
+
+.user-profile .user .user-info .details h2 {
+  font-size: 15px;
+}
+
+.user-profile .user .user-info .details h3 {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.user-profile .posts-layout {
+  margin-top: 30px;
+  border-top: 1px solid #d5d5d5;
+}
+
+.user-profile .posts-layout .filters {
+  padding: 10px;
+  text-align: center;
+}
+
+.user-profile .posts-layout .filters .posts-filter {
+  display: inline-block;
+  margin-right: 100px;
+  position: relative;
+  cursor: pointer;
+}
+
+.user-profile .posts-layout .filters .posts-filter.active::before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-color: black;
+}
+
+.user-profile .posts-layout .filters .posts-filter::before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.user-profile .posts-layout .filters .posts-filter:hover::before {
+  background-color: black;
+}
+
+.user-profile .posts-layout .filters .posts-filter .icon {
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.user-profile .posts-layout .filters .posts-filter h3 {
+  font-size: 15px;
+  display: inline-block;
+}
+
+.user-profile .posts-layout .filters .tagged-filter {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.user-profile .posts-layout .filters .tagged-filter.active::before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-color: black;
+}
+
+.user-profile .posts-layout .filters .tagged-filter::before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.user-profile .posts-layout .filters .tagged-filter:hover::before {
+  background-color: black;
+}
+
+.user-profile .posts-layout .filters .tagged-filter .icon {
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.user-profile .posts-layout .filters .tagged-filter h3 {
+  font-size: 15px;
+  display: inline-block;
+}
+
+.user-profile .posts-layout .post-layout {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
 /*# sourceMappingURL=mainStyle.css.map */
