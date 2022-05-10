@@ -90,6 +90,7 @@ nav {
   background-color: #ffffff;
   z-index: 1000;
   border-bottom: 1px solid #efefef;
+  width: 100vw;
 }
 
 nav .container {
@@ -208,6 +209,7 @@ nav .container .nav-icons .icon-img {
 
 .non-nav {
   background-color: #f4f4f4;
+  width: 100vw;
 }
 
 .non-nav .content-area {
@@ -239,12 +241,7 @@ nav .container .nav-icons .icon-img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-@media (max-width: 767px) {
-  .non-nav .content-area .feed {
-    width: 100vw;
-  }
+  width: 100%;
 }
 
 .non-nav .content-area .feed .stories {
@@ -268,7 +265,6 @@ nav .container .nav-icons .icon-img {
   overflow: hidden;
   padding: 20px;
   height: 113px;
-  width: 100%;
 }
 
 .non-nav .content-area .feed .stories .story-layout {
@@ -290,6 +286,12 @@ nav .container .nav-icons .icon-img {
   position: relative;
 }
 
+@media (max-width: 767px) {
+  .non-nav .content-area .feed .stories .story-layout {
+    width: 50px;
+  }
+}
+
 .non-nav .content-area .feed .stories .story-layout::after {
   content: "";
   position: absolute;
@@ -298,6 +300,12 @@ nav .container .nav-icons .icon-img {
   width: 8px;
   height: 15px;
   background-color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 767px) {
+  .non-nav .content-area .feed .stories .story-layout::after {
+    width: 3px;
+  }
 }
 
 .non-nav .content-area .feed .stories .story-layout .story {
@@ -316,6 +324,9 @@ nav .container .nav-icons .icon-img {
 }
 
 @media (max-width: 767px) {
+  .non-nav .content-area .feed .stories {
+    padding: 0;
+  }
   .non-nav .content-area .feed .stories [data-id="2"] {
     display: none;
   }
@@ -335,7 +346,6 @@ nav .container .nav-icons .icon-img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
 }
 
 .non-nav .content-area .feed .posts .post {

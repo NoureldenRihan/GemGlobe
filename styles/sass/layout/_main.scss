@@ -9,6 +9,7 @@ nav {
   background-color: #ffffff;
   z-index: 1000;
   border-bottom: 1px solid $lightgray-color;
+  width: 100vw;
 
   .container {
     @include FlexCreator("row", "around");
@@ -89,6 +90,7 @@ nav {
 
 .non-nav {
   background-color: rgb(244, 244, 244);
+  width: 100vw;
 
   .content-area {
     display: grid;
@@ -101,23 +103,23 @@ nav {
 
     .feed {
       @include FlexCreator("column", "center");
-
-      @media (max-width: 767px) {
-        width: 100vw;
-      }
+      width: 100%;
 
       .stories {
         @include FlexCreator("row", "around");
         @include Section;
         padding: 20px;
         height: 113px;
-        width: 100%;
 
         .story-layout {
           @include FlexCreator("column", "center");
           width: 70px;
           overflow: hidden;
           position: relative;
+
+          @media (max-width: 767px) {
+            width: 50px;
+          }
 
           &::after {
             content: "";
@@ -127,6 +129,10 @@ nav {
             width: 8px;
             height: 15px;
             background-color: rgba($color: #ffffff, $alpha: 0.85);
+
+            @media (max-width: 767px) {
+              width: 3px;
+            }
           }
 
           .story {
@@ -146,6 +152,8 @@ nav {
         }
 
         @media (max-width: 767px) {
+          padding: 0;
+
           [data-id="2"] {
             display: none;
           }
@@ -154,7 +162,6 @@ nav {
 
       .posts {
         @include FlexCreator("column", "center");
-        width: 100%;
 
         .post {
           @include Section;

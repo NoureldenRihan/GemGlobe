@@ -41,7 +41,7 @@ class Post extends Component {
           <i className="icon bi bi-three-dots"></i>
         </div>
         <div className="images">
-          <img src="/GemGlobe.png" alt="post-img" />
+          <img className="post-img" src="/GemGlobe.png" alt="post-img" />
         </div>
         <div className="likes">
           <div className="icons">
