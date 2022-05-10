@@ -95,14 +95,23 @@ nav {
     grid-template-columns: 60% 40%;
     gap: 20px;
 
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
+
     .feed {
       @include FlexCreator("column", "center");
+
+      @media (max-width: 767px) {
+        width: 100vw;
+      }
 
       .stories {
         @include FlexCreator("row", "around");
         @include Section;
         padding: 20px;
         height: 113px;
+        width: 100%;
 
         .story-layout {
           @include FlexCreator("column", "center");
@@ -131,13 +140,21 @@ nav {
 
             .story-img {
               border-radius: 50%;
+              width: 100%;
             }
+          }
+        }
+
+        @media (max-width: 767px) {
+          [data-id="2"] {
+            display: none;
           }
         }
       }
 
       .posts {
         @include FlexCreator("column", "center");
+        width: 100%;
 
         .post {
           @include Section;
@@ -334,6 +351,10 @@ nav {
         @include FlexCreator("row", "start");
         width: 100%;
 
+        @media (max-width: 992px) {
+          display: none;
+        }
+
         .mini-user-image-holder {
           cursor: pointer;
           border-radius: 50%;
@@ -367,6 +388,10 @@ nav {
         @include Section;
         width: 100%;
         padding: 0 15px;
+
+        @media (max-width: 992px) {
+          display: none;
+        }
 
         .heading {
           font-size: 25px;
@@ -427,6 +452,10 @@ nav {
         padding: 0 15px;
         color: rgba($color: #000000, $alpha: 0.5);
 
+        @media (max-width: 992px) {
+          text-align: center;
+        }
+
         h3 {
           margin-top: 5px;
 
@@ -442,6 +471,10 @@ nav {
         p {
           width: fit-content;
           cursor: pointer;
+
+          @media (max-width: 992px) {
+            width: 100%;
+          }
         }
       }
     }

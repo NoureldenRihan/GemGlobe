@@ -218,6 +218,13 @@ nav .container .nav-icons .icon-img {
   gap: 20px;
 }
 
+@media (max-width: 992px) {
+  .non-nav .content-area {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 .non-nav .content-area .feed {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -232,6 +239,12 @@ nav .container .nav-icons .icon-img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .non-nav .content-area .feed {
+    width: 100vw;
+  }
 }
 
 .non-nav .content-area .feed .stories {
@@ -255,6 +268,7 @@ nav .container .nav-icons .icon-img {
   overflow: hidden;
   padding: 20px;
   height: 113px;
+  width: 100%;
 }
 
 .non-nav .content-area .feed .stories .story-layout {
@@ -298,6 +312,13 @@ nav .container .nav-icons .icon-img {
 
 .non-nav .content-area .feed .stories .story-layout .story .story-img {
   border-radius: 50%;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .non-nav .content-area .feed .stories [data-id="2"] {
+    display: none;
+  }
 }
 
 .non-nav .content-area .feed .posts {
@@ -314,6 +335,7 @@ nav .container .nav-icons .icon-img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
 }
 
 .non-nav .content-area .feed .posts .post {
@@ -605,6 +627,12 @@ nav .container .nav-icons .icon-img {
   width: 100%;
 }
 
+@media (max-width: 992px) {
+  .non-nav .content-area .side-info .user-info {
+    display: none;
+  }
+}
+
 .non-nav .content-area .side-info .user-info .mini-user-image-holder {
   cursor: pointer;
   border-radius: 50%;
@@ -644,6 +672,12 @@ nav .container .nav-icons .icon-img {
   overflow: hidden;
   width: 100%;
   padding: 0 15px;
+}
+
+@media (max-width: 992px) {
+  .non-nav .content-area .side-info .follow-suggests {
+    display: none;
+  }
 }
 
 .non-nav .content-area .side-info .follow-suggests .heading {
@@ -719,6 +753,12 @@ nav .container .nav-icons .icon-img {
   color: rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 992px) {
+  .non-nav .content-area .side-info .app-info {
+    text-align: center;
+  }
+}
+
 .non-nav .content-area .side-info .app-info h3 {
   margin-top: 5px;
 }
@@ -736,6 +776,12 @@ nav .container .nav-icons .icon-img {
   width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .non-nav .content-area .side-info .app-info p {
+    width: 100%;
+  }
 }
 
 .user-profile {

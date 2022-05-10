@@ -2,20 +2,18 @@ import React, { Component } from "react";
 import Image from "next/image";
 
 class Story extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
-      <div className="story-layout">
+      <div data-id={this.props.id} className="story-layout">
         <div className="story">
-          <Image
-            className="story-img"
-            src="/GemGlobe.png"
-            alt="User Image"
-            width={55}
-            height={55}
-          />
+          <img className="story-img" src="/GemGlobe.png" alt="User Image" />
         </div>
-        <p>username</p>
+        <p>{this.props.username}</p>
       </div>
     );
   }
