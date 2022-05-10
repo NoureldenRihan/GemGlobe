@@ -967,7 +967,104 @@ nav .container .nav-icons .icon-img {
   display: grid;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 30px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.user-profile .posts-layout .post-layout .profile-post {
+  position: relative;
+  margin: auto;
+  width: 295px;
+  height: 295px;
+}
+
+.user-profile .posts-layout .post-layout .profile-post::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.user-profile .posts-layout .post-layout .profile-post:hover::before {
+  width: 100%;
+}
+
+.user-profile .posts-layout .post-layout .profile-post:hover .post-stats .likes,
+.user-profile .posts-layout .post-layout .profile-post:hover .post-stats .comments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.user-profile .posts-layout .post-layout .profile-post img {
+  width: 100%;
+}
+
+.user-profile .posts-layout .post-layout .profile-post .post-stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0 50px;
+  position: relative;
+  top: -157.5px;
+}
+
+.user-profile .posts-layout .post-layout .profile-post .post-stats .likes {
+  display: none;
+  z-index: 5;
+}
+
+.user-profile .posts-layout .post-layout .profile-post .post-stats .likes .icon {
+  color: white;
+  margin-right: 5px;
+  font-size: 17px;
+}
+
+.user-profile .posts-layout .post-layout .profile-post .post-stats .likes h4 {
+  color: white;
+  font-size: 17px;
+}
+
+.user-profile .posts-layout .post-layout .profile-post .post-stats .comments {
+  display: none;
+  z-index: 5;
+}
+
+.user-profile .posts-layout .post-layout .profile-post .post-stats .comments .icon {
+  color: white;
+  margin-right: 5px;
+  font-size: 17px;
+}
+
+.user-profile .posts-layout .post-layout .profile-post .post-stats .comments h4 {
+  color: white;
+  font-size: 17px;
+}
+
+.user-profile .app-info {
+  margin: 30px 0 15px 0;
   text-align: center;
 }
 /*# sourceMappingURL=mainStyle.css.map */

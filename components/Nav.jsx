@@ -16,7 +16,9 @@ class Nav extends Component {
             <input type="search" className="search" placeholder="Search" />
           </div>
           <div className="c3 nav-icons">
-            <i className="icon notify bi bi-house-door"></i>
+            <Link href="/">
+              <i className="icon notify bi bi-house-door"></i>
+            </Link>
             {/* <i class="icon bi bi-house-door-fill"></i> */}
             <i className="icon bi bi-plus-square"></i>
             {/* <i class="icon bi bi-plus-square-fill"></i> */}
