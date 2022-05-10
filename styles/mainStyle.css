@@ -113,6 +113,10 @@ nav .container .c3 {
   width: 100% / 3;
 }
 
+nav .container .c3 a {
+  color: black;
+}
+
 nav .container .search-area {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -973,6 +977,7 @@ nav .container .nav-icons .icon-img {
 }
 
 .user-profile .posts-layout .post-layout .profile-post {
+  cursor: pointer;
   position: relative;
   margin: auto;
   width: 295px;

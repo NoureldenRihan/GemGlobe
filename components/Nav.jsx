@@ -4,11 +4,23 @@ import React, { Component } from "react";
 
 class Nav extends Component {
   state = {};
+
+  navIconClick = (e) => {
+    let fullClass = e.target.classList.value;
+    if (fullClass.slice(-4) === "fill") {
+      e.target.classList.value = fullClass.slice(0, -5);
+    } else {
+      e.target.classList.value += "-fill";
+    }
+  };
+
   render() {
     return (
       <nav>
         <div className="container">
-          <h1 className="c3">GemGlobe</h1>
+          <h1 className="c3">
+            <Link href="/">GemGlobe</Link>
+          </h1>
           <div className="c3 search-area">
             <span className="search-icon">
               <i className="icon bi bi-search"></i>
@@ -17,14 +29,23 @@ class Nav extends Component {
           </div>
           <div className="c3 nav-icons">
             <Link href="/">
-              <i className="icon notify bi bi-house-door"></i>
+              <i
+                className="icon notify bi bi-house-door"
+                onClick={this.navIconClick}
+              ></i>
             </Link>
             {/* <i class="icon bi bi-house-door-fill"></i> */}
-            <i className="icon bi bi-plus-square"></i>
+            <i
+              className="icon bi bi-plus-square"
+              onClick={this.navIconClick}
+            ></i>
             {/* <i class="icon bi bi-plus-square-fill"></i> */}
-            <i className="icon bi bi-compass"></i>
+            <i className="icon bi bi-compass" onClick={this.navIconClick}></i>
             {/* <i class="icon bi bi-compass-fill"></i> */}
-            <i className="icon notify bi bi-heart"></i>
+            <i
+              className="icon notify bi bi-heart"
+              onClick={this.navIconClick}
+            ></i>
             {/* <i class="icon bi bi-heart-fill"></i> */}
             <Link href="/users/u2300">
               <Image

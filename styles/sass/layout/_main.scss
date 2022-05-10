@@ -17,6 +17,10 @@ nav {
 
     .c3 {
       width: 100% / 3;
+
+      a {
+        color: black;
+      }
     }
 
     .search-area {
@@ -622,6 +626,7 @@ nav {
       margin-top: 10px;
 
       .profile-post {
+        cursor: pointer;
         position: relative;
         margin: auto;
         width: 295px;
