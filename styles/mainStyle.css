@@ -10,6 +10,7 @@ html {
   scroll-behavior: smooth;
   font-size: 10px;
   overflow-x: hidden;
+  background-color: #f4f4f4;
 }
 
 body {
@@ -801,7 +802,6 @@ nav .container .nav-icons .icon-img {
 
 .user-profile {
   background-color: #f4f4f4;
-  height: 100vh;
 }
 
 .user-profile .user {
@@ -1283,9 +1283,6 @@ nav .container .nav-icons .icon-img {
 }
 
 .user-profile .app-info {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   margin: 30px 0 15px 0;
   text-align: center;
 }

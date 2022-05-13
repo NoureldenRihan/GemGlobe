@@ -492,7 +492,6 @@ nav {
 
 .user-profile {
   background-color: rgb(244, 244, 244);
-  height: 100vh;
 
   .user {
     @include FlexCreator("row", "between");
@@ -721,9 +720,6 @@ nav {
   }
 
   .app-info {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     margin: 30px 0 15px 0;
     text-align: center;
 
