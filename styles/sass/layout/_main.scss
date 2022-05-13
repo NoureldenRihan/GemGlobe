@@ -683,19 +683,32 @@ nav {
           position: relative;
           top: -157.5px;
 
+          @media (max-width: 767px) {
+            top: -66px;
+          }
+
           .likes {
             display: none;
             z-index: 5;
+            margin-right: 5px;
 
             .icon {
               color: white;
               margin-right: 5px;
               font-size: 17px;
+
+              @media (max-width: 767px) {
+                font-size: 13px;
+              }
             }
 
             h4 {
               color: white;
               font-size: 17px;
+
+              @media (max-width: 767px) {
+                font-size: 13px;
+              }
             }
           }
 
@@ -707,11 +720,19 @@ nav {
               color: white;
               margin-right: 5px;
               font-size: 17px;
+
+              @media (max-width: 767px) {
+                font-size: 13px;
+              }
             }
 
             h4 {
               color: white;
               font-size: 17px;
+
+              @media (max-width: 767px) {
+                font-size: 13px;
+              }
             }
           }
         }

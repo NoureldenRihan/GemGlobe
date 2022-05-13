@@ -1250,9 +1250,16 @@ nav .container .nav-icons .icon-img {
   top: -157.5px;
 }
 
+@media (max-width: 767px) {
+  .user-profile .posts-layout .post-layout .profile-post .post-stats {
+    top: -66px;
+  }
+}
+
 .user-profile .posts-layout .post-layout .profile-post .post-stats .likes {
   display: none;
   z-index: 5;
+  margin-right: 5px;
 }
 
 .user-profile .posts-layout .post-layout .profile-post .post-stats .likes .icon {
@@ -1261,9 +1268,21 @@ nav .container .nav-icons .icon-img {
   font-size: 17px;
 }
 
+@media (max-width: 767px) {
+  .user-profile .posts-layout .post-layout .profile-post .post-stats .likes .icon {
+    font-size: 13px;
+  }
+}
+
 .user-profile .posts-layout .post-layout .profile-post .post-stats .likes h4 {
   color: white;
   font-size: 17px;
+}
+
+@media (max-width: 767px) {
+  .user-profile .posts-layout .post-layout .profile-post .post-stats .likes h4 {
+    font-size: 13px;
+  }
 }
 
 .user-profile .posts-layout .post-layout .profile-post .post-stats .comments {
@@ -1277,9 +1296,21 @@ nav .container .nav-icons .icon-img {
   font-size: 17px;
 }
 
+@media (max-width: 767px) {
+  .user-profile .posts-layout .post-layout .profile-post .post-stats .comments .icon {
+    font-size: 13px;
+  }
+}
+
 .user-profile .posts-layout .post-layout .profile-post .post-stats .comments h4 {
   color: white;
   font-size: 17px;
+}
+
+@media (max-width: 767px) {
+  .user-profile .posts-layout .post-layout .profile-post .post-stats .comments h4 {
+    font-size: 13px;
+  }
 }
 
 .user-profile .app-info {
