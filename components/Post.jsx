@@ -17,6 +17,26 @@ class Post extends Component {
     }
   };
 
+  postIconClick = (e) => {
+    let fullClass = e.target.classList.value;
+
+    if (fullClass.slice(-10, -5) === "heart") {
+      e.target.classList.value = fullClass.slice(0, -5);
+      e.target.style.color = "black";
+    } else if (fullClass.slice(-5) === "heart") {
+      e.target.classList.value += "-fill";
+      e.target.style.color = "red";
+    } else if (fullClass.slice(-4) === "chat") {
+      document.getElementById("addComment").focus();
+    } else {
+      if (fullClass.slice(-4) === "fill") {
+        e.target.classList.value = fullClass.slice(0, -5);
+      } else {
+        e.target.classList.value += "-fill";
+      }
+    }
+  };
+
   render() {
     return (
       <div className="post">
@@ -46,12 +66,15 @@ class Post extends Component {
         <div className="likes">
           <div className="icons">
             <div className="left">
-              <i className="icon bi bi-heart"></i>
-              <i className="icon bi bi-chat"></i>
-              <i className="icon bi bi-send"></i>
+              <i className="icon bi bi-heart" onClick={this.postIconClick}></i>
+              <i className="icon bi bi-chat" onClick={this.postIconClick}></i>
+              <i className="icon bi bi-send" onClick={this.postIconClick}></i>
             </div>
             <div className="right">
-              <i className="icon bi bi-bookmark"></i>
+              <i
+                className="icon bi bi-bookmark"
+                onClick={this.postIconClick}
+              ></i>
             </div>
           </div>
           <p className="total-likes">2,239 likes</p>
@@ -67,11 +90,15 @@ class Post extends Component {
           </h4>
         </div>
         <div className="comments">
-          <Comment />
-          <Comment />
+          <Comment like={this.postIconClick} />
+          <Comment like={this.postIconClick} />
         </div>
         <div className="add-comment">
-          <textarea onChange={this.modifyPost} placeholder="Add a comment..." />
+          <textarea
+            onChange={this.modifyPost}
+            id="addComment"
+            placeholder="Add a comment..."
+          />
           <h3 id="post-comment" className="disabled">
             Post
           </h3>

@@ -9,12 +9,10 @@ class User extends Component {
       <div className="user">
         <div className="user-profile-flex-holder">
           <div className="user-profile-img-holder">
-            <Image
+            <img
               className="user-profile-img"
               src="/GemGlobe.png"
               alt="User Image"
-              width={175}
-              height={175}
             />
           </div>
         </div>

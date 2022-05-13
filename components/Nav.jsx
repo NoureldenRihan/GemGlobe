@@ -7,6 +7,14 @@ class Nav extends Component {
 
   navIconClick = (e) => {
     let fullClass = e.target.classList.value;
+    let navIcons = document.querySelectorAll("nav .container .nav-icons .icon");
+    for (let i = 0; i < navIcons.length; i++) {
+      let currentClass = navIcons[i].classList.value;
+
+      if (currentClass.slice(-4) === "fill") {
+        navIcons[i].classList.value = currentClass.slice(0, -5);
+      }
+    }
     if (fullClass.slice(-4) === "fill") {
       e.target.classList.value = fullClass.slice(0, -5);
     } else {

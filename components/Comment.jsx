@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import Link from "next/link";
 
 class Comment extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
       <div className="comment">
@@ -12,7 +16,7 @@ class Comment extends Component {
           </p>
           comment
         </h4>
-        <i className="icon bi bi-heart"></i>
+        <i className="icon bi bi-heart" onClick={this.props.like}></i>
       </div>
     );
   }

@@ -1,6 +1,8 @@
 @import "../mixins/mixins";
 @import "../variables/color-transitions";
 @import "../variables/responsive_containers";
+@import "../alt/user-info";
+@import "../alt/user-info-small";
 
 nav {
   position: sticky;
@@ -490,12 +492,20 @@ nav {
 
 .user-profile {
   background-color: rgb(244, 244, 244);
+  height: 100vh;
 
   .user {
     @include FlexCreator("row", "between");
     margin-top: 20px;
     .user-profile-flex-holder {
       width: 25%;
+
+      @media (max-width: 767px) {
+        position: absolute;
+        top: 75px;
+        width: 20%;
+      }
+
       .user-profile-img-holder {
         border-radius: 50%;
         border: 2px solid blue;
@@ -505,74 +515,27 @@ nav {
 
         .user-profile-img {
           border-radius: 50%;
+          width: 100%;
         }
       }
     }
 
-    .user-info {
-      @include FlexCreator("column", "center");
-      width: 75%;
-      margin-left: 150px;
-      margin-right: 200px;
-
-      .top {
-        @include FlexCreator("row", "between");
-        width: 100%;
-
-        h2,
-        button,
-        .icon {
-          cursor: pointer;
+    .user-info-area {
+      @media (min-width: 768px) {
+        .user-info {
+          @include userInfo;
         }
-
-        h2 {
-          font-size: 30px;
-          font-weight: 300;
-        }
-
-        button {
-          outline: 0;
-          border: 0;
-          background-color: gray;
-          color: white;
-          border-radius: 8px;
-          padding: 5px 40px;
-        }
-
-        .icon {
-          font-size: 30px;
+        .user-info-small {
+          display: none;
         }
       }
 
-      .stats {
-        width: 100%;
-        margin: 30px 0;
-
-        h3 {
-          font-size: 15px;
-          font-weight: 300;
-          display: inline-block;
-
-          &:not(:last-child) {
-            margin-right: 40px;
-          }
-
-          span {
-            font-weight: 700;
-          }
+      @media (max-width: 767px) {
+        .user-info {
+          display: none;
         }
-      }
-
-      .details {
-        width: 100%;
-
-        h2 {
-          font-size: 15px;
-        }
-
-        h3 {
-          font-size: 14px;
-          font-weight: 300;
+        .user-info-small {
+          @include userInfoSmall;
         }
       }
     }
@@ -581,6 +544,10 @@ nav {
   .posts-layout {
     margin-top: 30px;
     border-top: 1px solid rgb(213, 213, 213);
+
+    @media (max-width: 767px) {
+      margin-top: 0;
+    }
 
     .filters {
       padding: 10px;
@@ -665,12 +632,24 @@ nav {
       text-align: center;
       margin-top: 10px;
 
+      @media (max-width: 767px) {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 3px;
+      }
+
       .profile-post {
         cursor: pointer;
         position: relative;
         margin: auto;
         width: 295px;
         height: 295px;
+
+        @media (max-width: 767px) {
+          width: 112px;
+          height: 112px;
+          margin-bottom: 4px;
+        }
 
         &::before {
           content: "";
@@ -742,7 +721,14 @@ nav {
   }
 
   .app-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     margin: 30px 0 15px 0;
     text-align: center;
+
+    @media (max-width: 767px) {
+      margin: 15px 0 5px 0;
+    }
   }
 }
