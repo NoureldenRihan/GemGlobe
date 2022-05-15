@@ -10,7 +10,8 @@ class Post extends Component {
   }
 
   modifyPost = (e) => {
-    const button = document.getElementById("post-comment");
+    let commentAreaId = e.target.dataset.id;
+    const button = document.getElementById(`post-comment${commentAreaId}`);
     if (e.target.value !== "") {
       button.classList.remove("disabled");
       button.classList.add("enabled");
@@ -106,8 +107,9 @@ class Post extends Component {
             onChange={this.modifyPost}
             id={`addComment${this.props.id}`}
             placeholder="Add a comment..."
+            data-id={this.props.id}
           />
-          <h3 id="post-comment" className="disabled">
+          <h3 id={`post-comment${this.props.id}`} className="disabled">
             Post
           </h3>
         </div>
