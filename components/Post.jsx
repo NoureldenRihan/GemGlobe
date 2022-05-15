@@ -4,7 +4,10 @@ import Link from "next/link";
 import Comment from "./Comment";
 
 class Post extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
   modifyPost = (e) => {
     const button = document.getElementById("post-comment");
@@ -27,7 +30,8 @@ class Post extends Component {
       e.target.classList.value += "-fill";
       e.target.style.color = "red";
     } else if (fullClass.slice(-4) === "chat") {
-      document.getElementById("addComment").focus();
+      let commentAreaId = e.target.dataset.id;
+      document.getElementById(`addComment${commentAreaId}`).focus();
     } else {
       if (fullClass.slice(-4) === "fill") {
         e.target.classList.value = fullClass.slice(0, -5);
@@ -67,7 +71,11 @@ class Post extends Component {
           <div className="icons">
             <div className="left">
               <i className="icon bi bi-heart" onClick={this.postIconClick}></i>
-              <i className="icon bi bi-chat" onClick={this.postIconClick}></i>
+              <i
+                className="icon bi bi-chat"
+                data-id={this.props.id}
+                onClick={this.postIconClick}
+              ></i>
               <i className="icon bi bi-send" onClick={this.postIconClick}></i>
             </div>
             <div className="right">
@@ -96,7 +104,7 @@ class Post extends Component {
         <div className="add-comment">
           <textarea
             onChange={this.modifyPost}
-            id="addComment"
+            id={`addComment${this.props.id}`}
             placeholder="Add a comment..."
           />
           <h3 id="post-comment" className="disabled">

@@ -6,9 +6,9 @@ class Posts extends Component {
   render() {
     return (
       <div className="posts">
-        <Post />
-        <Post />
-        <Post />
+        <Post id={1} />
+        <Post id={2} />
+        <Post id={3} />
       </div>
     );
   }
