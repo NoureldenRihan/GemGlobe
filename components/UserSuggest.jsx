@@ -1,8 +1,21 @@
 import React, { Component } from "react";
 import Image from "next/image";
-
 class UserSuggest extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  followState = (e) => {
+    let current = e.target.innerHTML;
+    let currentId = e.target.dataset.id;
+    if (current === "Follow") {
+      document.getElementById(`follow${currentId}`).innerHTML = "Following";
+    } else {
+      document.getElementById(`follow${currentId}`).innerHTML = "Follow";
+    }
+  };
+
   render() {
     return (
       <div className="suggest">
@@ -19,7 +32,14 @@ class UserSuggest extends Component {
           <h2>GemGlobe</h2>
           <h4>Volcanic Gems</h4>
         </div>
-        <h3 className="follow">Follow</h3>
+        <h3
+          id={`follow${this.props.id}`}
+          data-id={this.props.id}
+          className="follow"
+          onClick={this.followState}
+        >
+          Follow
+        </h3>
       </div>
     );
   }

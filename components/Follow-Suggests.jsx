@@ -7,10 +7,10 @@ class FollowSuggests extends Component {
     return (
       <div className="follow-suggests">
         <h2 className="heading">Suggestions</h2>
-        <UserSuggest />
-        <UserSuggest />
-        <UserSuggest />
-        <UserSuggest />
+        <UserSuggest id={1} />
+        <UserSuggest id={2} />
+        <UserSuggest id={3} />
+        <UserSuggest id={4} />
       </div>
     );
   }
