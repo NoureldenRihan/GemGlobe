@@ -6,9 +6,9 @@ class Posts extends Component {
   render() {
     return (
       <div className="posts">
-        <Post id={1} />
-        <Post id={2} />
-        <Post id={3} />
+        {this.props.posts.map((post) => (
+          <Post key={post.id} id={post.id} />
+        ))}
       </div>
     );
   }

@@ -22,15 +22,15 @@ class UserSuggest extends Component {
         <div className="mini-user-image-holder">
           <Image
             className="mini-user-img"
-            src="/GemGlobe.png"
+            src={this.props.img}
             alt="User Image"
             width={50}
             height={50}
           />
         </div>
         <div className="details">
-          <h2>GemGlobe</h2>
-          <h4>Volcanic Gems</h4>
+          <h2>{this.props.username}</h2>
+          <h4>{this.props.userDescription}</h4>
         </div>
         <h3
           id={`follow${this.props.id}`}

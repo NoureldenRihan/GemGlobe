@@ -59,14 +59,14 @@ class Post extends Component {
           </div>
           <div className="details">
             <Link href="/users/user2300">
-              <h2>GemGlobe</h2>
+              <h2>{this.props.name}</h2>
             </Link>
-            <h4>Volcanic Gems</h4>
+            <h4>{this.props.description}</h4>
           </div>
           <i className="icon bi bi-three-dots"></i>
         </div>
         <div className="images">
-          <img className="post-img" src="/GemGlobe.png" alt="post-img" />
+          <img className="post-img" src={this.props.img} alt="post-img" />
         </div>
         <div className="likes">
           <div className="icons">
@@ -86,21 +86,27 @@ class Post extends Component {
               ></i>
             </div>
           </div>
-          <p className="total-likes">2,239 likes</p>
+          <p className="total-likes">{this.props.likes} likes</p>
         </div>
         <div className="post-details">
           <h4>
             <p>
               <Link href="/users/user2300">Username</Link>
             </p>
-            hes been a kitchen fabricator for many years but as a keen baker
-            wasnt happy with many baking ovens so he just made his own ! As you
-            do ! And its brilliant
+            {this.props.details}
           </h4>
         </div>
         <div className="comments">
           <Comment like={this.postIconClick} />
           <Comment like={this.postIconClick} />
+          {this.props.comments.map((comment) => (
+            <Comment
+              key={comment.id}
+              username={comment.user}
+              data={comment.comment}
+              like={this.postIconClick}
+            />
+          ))}
         </div>
         <div className="add-comment">
           <textarea

@@ -351,70 +351,23 @@ nav {
     }
 
     .side-info {
-      @include FlexCreator("column", "center");
-      justify-content: flex-start;
-      margin-top: 10px;
-      padding: 20px;
+      position: relative;
 
-      .user-info {
-        @include FlexCreator("row", "start");
+      .side-info-holder {
+        @include FlexCreator("column", "center");
+        justify-content: flex-start;
+        padding: 20px;
         width: 100%;
+        position: sticky;
+        top: 60px;
+        left: 0;
 
-        @media (max-width: 992px) {
-          display: none;
-        }
-
-        .mini-user-image-holder {
-          cursor: pointer;
-          border-radius: 50%;
-          padding: 1px;
-          border: 2px solid blue;
-
-          .mini-user-img {
-            border-radius: 50%;
-          }
-        }
-
-        .details {
-          width: 100%;
-          text-align: left;
-          margin-left: 10px;
-
-          h2,
-          h4 {
-            width: fit-content;
-            padding: 2px;
-            cursor: pointer;
-          }
-
-          h4 {
-            color: $gray-color;
-          }
-        }
-      }
-
-      .follow-suggests {
-        @include Section;
-        width: 100%;
-        padding: 0 15px;
-
-        @media (max-width: 992px) {
-          display: none;
-        }
-
-        .heading {
-          font-size: 25px;
-          padding: 15px 0;
-          color: rgba($color: #000000, $alpha: 0.6);
-        }
-
-        .suggest {
+        .user-info {
           @include FlexCreator("row", "start");
           width: 100%;
-          margin-bottom: 10px;
 
-          &:first-child {
-            margin-top: 10px;
+          @media (max-width: 992px) {
+            display: none;
           }
 
           .mini-user-image-holder {
@@ -443,46 +396,100 @@ nav {
             h4 {
               color: $gray-color;
             }
-
-            h2:hover {
-              text-decoration: underline;
-            }
-          }
-
-          .follow {
-            cursor: pointer;
-          }
-        }
-      }
-
-      .app-info {
-        margin-top: 10px;
-        width: 100%;
-        padding: 0 15px;
-        color: rgba($color: #000000, $alpha: 0.5);
-
-        @media (max-width: 992px) {
-          text-align: center;
-        }
-
-        h3 {
-          margin-top: 5px;
-
-          a {
-            color: black;
-
-            &:hover {
-              text-decoration: underline;
-            }
           }
         }
 
-        p {
-          width: fit-content;
-          cursor: pointer;
+        .follow-suggests {
+          @include Section;
+          width: 100%;
+          padding: 0 15px;
 
           @media (max-width: 992px) {
+            display: none;
+          }
+
+          .heading {
+            font-size: 25px;
+            padding: 15px 0;
+            color: rgba($color: #000000, $alpha: 0.6);
+          }
+
+          .suggest {
+            @include FlexCreator("row", "start");
             width: 100%;
+            margin-bottom: 10px;
+
+            &:first-child {
+              margin-top: 10px;
+            }
+
+            .mini-user-image-holder {
+              cursor: pointer;
+              border-radius: 50%;
+              padding: 1px;
+              border: 2px solid blue;
+
+              .mini-user-img {
+                border-radius: 50%;
+              }
+            }
+
+            .details {
+              width: 100%;
+              text-align: left;
+              margin-left: 10px;
+
+              h2,
+              h4 {
+                width: fit-content;
+                padding: 2px;
+                cursor: pointer;
+              }
+
+              h4 {
+                color: $gray-color;
+              }
+
+              h2:hover {
+                text-decoration: underline;
+              }
+            }
+
+            .follow {
+              cursor: pointer;
+            }
+          }
+        }
+
+        .app-info {
+          margin-top: 10px;
+          width: 100%;
+          padding: 0 15px;
+          color: rgba($color: #000000, $alpha: 0.5);
+
+          @media (max-width: 992px) {
+            text-align: center;
+          }
+
+          h3 {
+            margin-top: 5px;
+
+            a {
+              color: black;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          p {
+            width: fit-content;
+            cursor: pointer;
+
+            @media (max-width: 992px) {
+              width: 100%;
+            }
           }
         }
       }

@@ -1,19 +1,9 @@
-import Nav from "../../components/Nav";
-import PostsLayout from "../../components/profile/Posts-Layout";
-import User from "../../components/profile/User";
-import AppInfo from "../../components/App-Info.jsx";
+import ProfilePageWrapper from "../../components/profile/ProfilePageWrapper";
 
 export default function UserArea() {
   return (
     <>
-      <Nav />
-      <div className="user-profile">
-        <div className="container">
-          <User />
-          <PostsLayout />
-          <AppInfo />
-        </div>
-      </div>
+      <ProfilePageWrapper />
     </>
   );
 }

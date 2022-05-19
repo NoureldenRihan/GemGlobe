@@ -7,10 +7,15 @@ class FollowSuggests extends Component {
     return (
       <div className="follow-suggests">
         <h2 className="heading">Suggestions</h2>
-        <UserSuggest id={1} />
-        <UserSuggest id={2} />
-        <UserSuggest id={3} />
-        <UserSuggest id={4} />
+        {this.props.users.map((user) => (
+          <UserSuggest
+            key={user.id}
+            id={user.id}
+            img={user.img}
+            username={user.name}
+            userDescription={user.description}
+          />
+        ))}
       </div>
     );
   }

@@ -606,6 +606,10 @@ nav .container .nav-icons .icon-img {
 }
 
 .non-nav .content-area .side-info {
+  position: relative;
+}
+
+.non-nav .content-area .side-info .side-info-holder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -622,11 +626,15 @@ nav .container .nav-icons .icon-img {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  margin-top: 10px;
   padding: 20px;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
+  left: 0;
 }
 
-.non-nav .content-area .side-info .user-info {
+.non-nav .content-area .side-info .side-info-holder .user-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -644,30 +652,30 @@ nav .container .nav-icons .icon-img {
 }
 
 @media (max-width: 992px) {
-  .non-nav .content-area .side-info .user-info {
+  .non-nav .content-area .side-info .side-info-holder .user-info {
     display: none;
   }
 }
 
-.non-nav .content-area .side-info .user-info .mini-user-image-holder {
+.non-nav .content-area .side-info .side-info-holder .user-info .mini-user-image-holder {
   cursor: pointer;
   border-radius: 50%;
   padding: 1px;
   border: 2px solid blue;
 }
 
-.non-nav .content-area .side-info .user-info .mini-user-image-holder .mini-user-img {
+.non-nav .content-area .side-info .side-info-holder .user-info .mini-user-image-holder .mini-user-img {
   border-radius: 50%;
 }
 
-.non-nav .content-area .side-info .user-info .details {
+.non-nav .content-area .side-info .side-info-holder .user-info .details {
   width: 100%;
   text-align: left;
   margin-left: 10px;
 }
 
-.non-nav .content-area .side-info .user-info .details h2,
-.non-nav .content-area .side-info .user-info .details h4 {
+.non-nav .content-area .side-info .side-info-holder .user-info .details h2,
+.non-nav .content-area .side-info .side-info-holder .user-info .details h4 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -675,11 +683,11 @@ nav .container .nav-icons .icon-img {
   cursor: pointer;
 }
 
-.non-nav .content-area .side-info .user-info .details h4 {
+.non-nav .content-area .side-info .side-info-holder .user-info .details h4 {
   color: #777;
 }
 
-.non-nav .content-area .side-info .follow-suggests {
+.non-nav .content-area .side-info .side-info-holder .follow-suggests {
   background-color: white;
   border: 1px solid #dbdbdb;
   border-radius: 10px;
@@ -691,18 +699,18 @@ nav .container .nav-icons .icon-img {
 }
 
 @media (max-width: 992px) {
-  .non-nav .content-area .side-info .follow-suggests {
+  .non-nav .content-area .side-info .side-info-holder .follow-suggests {
     display: none;
   }
 }
 
-.non-nav .content-area .side-info .follow-suggests .heading {
+.non-nav .content-area .side-info .side-info-holder .follow-suggests .heading {
   font-size: 25px;
   padding: 15px 0;
   color: rgba(0, 0, 0, 0.6);
 }
 
-.non-nav .content-area .side-info .follow-suggests .suggest {
+.non-nav .content-area .side-info .side-info-holder .follow-suggests .suggest {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -720,29 +728,29 @@ nav .container .nav-icons .icon-img {
   margin-bottom: 10px;
 }
 
-.non-nav .content-area .side-info .follow-suggests .suggest:first-child {
+.non-nav .content-area .side-info .side-info-holder .follow-suggests .suggest:first-child {
   margin-top: 10px;
 }
 
-.non-nav .content-area .side-info .follow-suggests .suggest .mini-user-image-holder {
+.non-nav .content-area .side-info .side-info-holder .follow-suggests .suggest .mini-user-image-holder {
   cursor: pointer;
   border-radius: 50%;
   padding: 1px;
   border: 2px solid blue;
 }
 
-.non-nav .content-area .side-info .follow-suggests .suggest .mini-user-image-holder .mini-user-img {
+.non-nav .content-area .side-info .side-info-holder .follow-suggests .suggest .mini-user-image-holder .mini-user-img {
   border-radius: 50%;
 }
 
-.non-nav .content-area .side-info .follow-suggests .suggest .details {
+.non-nav .content-area .side-info .side-info-holder .follow-suggests .suggest .details {
   width: 100%;
   text-align: left;
   margin-left: 10px;
 }
 
-.non-nav .content-area .side-info .follow-suggests .suggest .details h2,
-.non-nav .content-area .side-info .follow-suggests .suggest .details h4 {
+.non-nav .content-area .side-info .side-info-holder .follow-suggests .suggest .details h2,
+.non-nav .content-area .side-info .side-info-holder .follow-suggests .suggest .details h4 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -750,19 +758,19 @@ nav .container .nav-icons .icon-img {
   cursor: pointer;
 }
 
-.non-nav .content-area .side-info .follow-suggests .suggest .details h4 {
+.non-nav .content-area .side-info .side-info-holder .follow-suggests .suggest .details h4 {
   color: #777;
 }
 
-.non-nav .content-area .side-info .follow-suggests .suggest .details h2:hover {
+.non-nav .content-area .side-info .side-info-holder .follow-suggests .suggest .details h2:hover {
   text-decoration: underline;
 }
 
-.non-nav .content-area .side-info .follow-suggests .suggest .follow {
+.non-nav .content-area .side-info .side-info-holder .follow-suggests .suggest .follow {
   cursor: pointer;
 }
 
-.non-nav .content-area .side-info .app-info {
+.non-nav .content-area .side-info .side-info-holder .app-info {
   margin-top: 10px;
   width: 100%;
   padding: 0 15px;
@@ -770,24 +778,24 @@ nav .container .nav-icons .icon-img {
 }
 
 @media (max-width: 992px) {
-  .non-nav .content-area .side-info .app-info {
+  .non-nav .content-area .side-info .side-info-holder .app-info {
     text-align: center;
   }
 }
 
-.non-nav .content-area .side-info .app-info h3 {
+.non-nav .content-area .side-info .side-info-holder .app-info h3 {
   margin-top: 5px;
 }
 
-.non-nav .content-area .side-info .app-info h3 a {
+.non-nav .content-area .side-info .side-info-holder .app-info h3 a {
   color: black;
 }
 
-.non-nav .content-area .side-info .app-info h3 a:hover {
+.non-nav .content-area .side-info .side-info-holder .app-info h3 a:hover {
   text-decoration: underline;
 }
 
-.non-nav .content-area .side-info .app-info p {
+.non-nav .content-area .side-info .side-info-holder .app-info p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -795,7 +803,7 @@ nav .container .nav-icons .icon-img {
 }
 
 @media (max-width: 992px) {
-  .non-nav .content-area .side-info .app-info p {
+  .non-nav .content-area .side-info .side-info-holder .app-info p {
     width: 100%;
   }
 }
