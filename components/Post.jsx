@@ -6,7 +6,9 @@ import Comment from "./Comment";
 class Post extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      likes: this.props.likes,
+    };
   }
 
   modifyPost = (e) => {
@@ -27,9 +29,15 @@ class Post extends Component {
     if (fullClass.slice(-10, -5) === "heart") {
       e.target.classList.value = fullClass.slice(0, -5);
       e.target.style.color = "black";
+      this.setState({
+        likes: this.props.likes,
+      });
     } else if (fullClass.slice(-5) === "heart") {
       e.target.classList.value += "-fill";
       e.target.style.color = "red";
+      this.setState({
+        likes: this.props.likes + 1,
+      });
     } else if (fullClass.slice(-4) === "chat") {
       let commentAreaId = e.target.dataset.id;
       document.getElementById(`addComment${commentAreaId}`).focus();
@@ -50,7 +58,7 @@ class Post extends Component {
             <Link href="/users/user2300">
               <Image
                 className="post-user-img"
-                src="/GemGlobe.png"
+                src={this.props.userimg}
                 alt="User Image"
                 width={55}
                 height={55}
@@ -86,7 +94,7 @@ class Post extends Component {
               ></i>
             </div>
           </div>
-          <p className="total-likes">{this.props.likes} likes</p>
+          <p className="total-likes">{this.state.likes} likes</p>
         </div>
         <div className="post-details">
           <h4>
@@ -97,13 +105,11 @@ class Post extends Component {
           </h4>
         </div>
         <div className="comments">
-          <Comment like={this.postIconClick} />
-          <Comment like={this.postIconClick} />
           {this.props.comments.map((comment) => (
             <Comment
               key={comment.id}
               username={comment.user}
-              data={comment.comment}
+              comment={comment.comment}
               like={this.postIconClick}
             />
           ))}

@@ -7,7 +7,17 @@ class Posts extends Component {
     return (
       <div className="posts">
         {this.props.posts.map((post) => (
-          <Post key={post.id} id={post.id} />
+          <Post
+            key={post.id}
+            id={post.id}
+            name={post.name}
+            description={post.description}
+            details={post.details}
+            img={post.img}
+            userimg={post.userimg}
+            likes={post.likes}
+            comments={post.comments}
+          />
         ))}
       </div>
     );

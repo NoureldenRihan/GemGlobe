@@ -352,6 +352,7 @@ nav .container .nav-icons .icon-img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
 }
 
 .non-nav .content-area .feed .posts .post {
@@ -400,7 +401,6 @@ nav .container .nav-icons .icon-img {
   cursor: pointer;
   border-radius: 50%;
   padding: 1px;
-  border: 2px solid blue;
 }
 
 .non-nav .content-area .feed .posts .post .user-info .post-user-image-holder .post-user-img {
@@ -429,6 +429,10 @@ nav .container .nav-icons .icon-img {
 .non-nav .content-area .feed .posts .post .user-info .icon {
   font-size: 25px;
   cursor: pointer;
+}
+
+.non-nav .content-area .feed .posts .post .images {
+  padding: 10px 0;
 }
 
 .non-nav .content-area .feed .posts .post .images .post-img {
@@ -736,7 +740,6 @@ nav .container .nav-icons .icon-img {
   cursor: pointer;
   border-radius: 50%;
   padding: 1px;
-  border: 2px solid blue;
 }
 
 .non-nav .content-area .side-info .side-info-holder .follow-suggests .suggest .mini-user-image-holder .mini-user-img {
@@ -843,7 +846,6 @@ nav .container .nav-icons .icon-img {
 
 .user-profile .user .user-profile-flex-holder .user-profile-img-holder {
   border-radius: 50%;
-  border: 2px solid blue;
   padding: 5px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -854,6 +856,10 @@ nav .container .nav-icons .icon-img {
 .user-profile .user .user-profile-flex-holder .user-profile-img-holder .user-profile-img {
   border-radius: 50%;
   width: 100%;
+}
+
+.user-profile .user .user-info-area {
+  margin-left: 20px;
 }
 
 @media (min-width: 768px) {
@@ -875,6 +881,16 @@ nav .container .nav-icons .icon-img {
     margin-left: 150px;
     margin-right: 200px;
   }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .user-profile .user .user-info-area .user-info {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) {
   .user-profile .user .user-info-area .user-info .top {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -907,6 +923,7 @@ nav .container .nav-icons .icon-img {
     color: white;
     border-radius: 8px;
     padding: 5px 40px;
+    text-align: center;
   }
   .user-profile .user .user-info-area .user-info .top .icon {
     font-size: 30px;
@@ -935,6 +952,11 @@ nav .container .nav-icons .icon-img {
   .user-profile .user .user-info-area .user-info .details h3 {
     font-size: 14px;
     font-weight: 300;
+  }
+  .user-profile .user .user-info-area .user-info .top .profile-btns:hover {
+    background-color: #000000;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
   }
   .user-profile .user .user-info-area .user-info-small {
     display: none;
@@ -1064,6 +1086,11 @@ nav .container .nav-icons .icon-img {
   .user-profile .user .user-info-area .user-info-small .stats h3 span {
     font-weight: 700;
     width: 100%;
+  }
+  .user-profile .user .user-info-area .user-info-small .top .profile-btns:hover {
+    background-color: #000000;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
   }
 }
 
@@ -1238,6 +1265,7 @@ nav .container .nav-icons .icon-img {
 
 .user-profile .posts-layout .post-layout .profile-post img {
   width: 100%;
+  height: 100%;
 }
 
 .user-profile .posts-layout .post-layout .profile-post .post-stats {

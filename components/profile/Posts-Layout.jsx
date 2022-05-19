@@ -17,11 +17,15 @@ class PostsLayout extends Component {
           </div>
         </div>
         <div className="post-layout">
-          <ProfilePost />
-          <ProfilePost />
-          <ProfilePost />
-          <ProfilePost />
-          <ProfilePost />
+          {this.props.data.map((post) => (
+            <ProfilePost
+              key={post.id}
+              id={post.id}
+              img={post.img}
+              likes={post.likes}
+              comments={post.comments}
+            />
+          ))}
         </div>
       </div>
     );

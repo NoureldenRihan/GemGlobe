@@ -16,7 +16,7 @@ class User extends Component {
             />
           </div>
         </div>
-        <Info />
+        <Info data={this.props.data} />
       </div>
     );
   }

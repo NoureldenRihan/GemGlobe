@@ -10,7 +10,12 @@ class Stories extends Component {
     return (
       <div className="stories">
         {this.state.storyUsernames.map((item) => (
-          <Story key={item.id} id={item.id} username={item.name} />
+          <Story
+            key={item.id}
+            id={item.id}
+            username={item.name}
+            img={item.img}
+          />
         ))}
       </div>
     );
