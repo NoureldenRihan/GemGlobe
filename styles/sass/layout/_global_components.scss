@@ -39,9 +39,19 @@ button {
 /* Start Responsive Containers */
 
 /* Small Screens */
+@media (min-width: 450px) {
+  .icon {
+    transform: scale(1);
+  }
+}
+
 @media (min-width: $smallScreens) {
   .container {
     width: 750px;
+  }
+
+  .icon {
+    transform: scale(1.2);
   }
 }
 
@@ -50,12 +60,20 @@ button {
   .container {
     width: 970px;
   }
+
+  .icon {
+    transform: scale(1.3);
+  }
 }
 
 /* Large Screens */
 @media (min-width: $largeScreens) {
   .container {
     width: 1000px;
+  }
+
+  .icon {
+    transform: scale(1.45);
   }
 }
 
@@ -89,6 +107,7 @@ button {
 
 .icon {
   transition: $low-transition;
+  transform: scale(1.55);
 }
 
 /* End Components */

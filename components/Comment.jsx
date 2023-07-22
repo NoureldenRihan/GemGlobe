@@ -4,8 +4,22 @@ import Link from "next/link";
 class Comment extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isLiked: false,
+    };
   }
+
+  likeComment = () => {
+    if (!this.state.isLiked) {
+      this.setState({
+        isLiked: true,
+      });
+      return;
+    }
+    this.setState({
+      isLiked: false,
+    });
+  };
 
   render() {
     return (
@@ -16,7 +30,11 @@ class Comment extends Component {
           </p>
           {this.props.comment}
         </h4>
-        <i className="icon bi bi-heart" onClick={this.props.like}></i>
+        <img
+          className="icon"
+          src={this.state.isLiked ? "/SVGs/heart-fill.svg" : "/SVGs/heart.svg"}
+          onClick={this.likeComment}
+        ></img>
       </div>
     );
   }

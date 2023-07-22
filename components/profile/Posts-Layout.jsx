@@ -8,11 +8,11 @@ class PostsLayout extends Component {
       <div className="posts-layout">
         <div className="filters">
           <div className="posts-filter">
-            <i className="icon bi bi-filter-circle"></i>
+            <img className="icon" src="/SVGs/filter-circle.svg" />
             <h3>Posts</h3>
           </div>
           <div className="tagged-filter">
-            <i className="icon bi bi-hash"></i>
+            <img className="icon" src="/SVGs/hash.svg" />
             <h3>Tagged</h3>
           </div>
         </div>

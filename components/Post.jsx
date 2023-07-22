@@ -8,6 +8,10 @@ class Post extends Component {
     super(props);
     this.state = {
       likes: this.props.likes,
+      isLiked: false,
+      isCommented: false,
+      isSent: false,
+      isBookmarked: false,
     };
   }
 
@@ -23,31 +27,54 @@ class Post extends Component {
     }
   };
 
-  postIconClick = (e) => {
-    let fullClass = e.target.classList.value;
-
-    if (fullClass.slice(-10, -5) === "heart") {
-      e.target.classList.value = fullClass.slice(0, -5);
-      e.target.style.color = "black";
-      this.setState({
-        likes: this.props.likes,
-      });
-    } else if (fullClass.slice(-5) === "heart") {
-      e.target.classList.value += "-fill";
-      e.target.style.color = "red";
+  likePost = () => {
+    if (!this.state.isLiked) {
       this.setState({
         likes: this.props.likes + 1,
+        isLiked: true,
       });
-    } else if (fullClass.slice(-4) === "chat") {
-      let commentAreaId = e.target.dataset.id;
-      document.getElementById(`addComment${commentAreaId}`).focus();
-    } else {
-      if (fullClass.slice(-4) === "fill") {
-        e.target.classList.value = fullClass.slice(0, -5);
-      } else {
-        e.target.classList.value += "-fill";
-      }
+      return;
     }
+    this.setState({
+      likes: this.props.likes,
+      isLiked: false,
+    });
+  };
+
+  commentPost = () => {
+    if (!this.state.isCommented) {
+      this.setState({
+        isCommented: true,
+      });
+      return;
+    }
+    this.setState({
+      isCommented: false,
+    });
+  };
+
+  sentPost = () => {
+    if (!this.state.isSent) {
+      this.setState({
+        isSent: true,
+      });
+      return;
+    }
+    this.setState({
+      isSent: false,
+    });
+  };
+
+  bookmarkPost = () => {
+    if (!this.state.isBookmarked) {
+      this.setState({
+        isBookmarked: true,
+      });
+      return;
+    }
+    this.setState({
+      isBookmarked: false,
+    });
   };
 
   render() {
@@ -71,7 +98,7 @@ class Post extends Component {
             </Link>
             <h4>{this.props.description}</h4>
           </div>
-          <i className="icon bi bi-three-dots"></i>
+          <img className="icon" src="/SVGs/three-dots.svg"></img>
         </div>
         <div className="images">
           <img className="post-img" src={this.props.img} alt="post-img" />
@@ -79,19 +106,43 @@ class Post extends Component {
         <div className="likes">
           <div className="icons">
             <div className="left">
-              <i className="icon bi bi-heart" onClick={this.postIconClick}></i>
-              <i
-                className="icon bi bi-chat"
+              <img
+                className="icon"
+                src={
+                  this.state.isLiked
+                    ? "/SVGs/heart-fill.svg"
+                    : "/SVGs/heart.svg"
+                }
+                onClick={this.likePost}
+              ></img>
+              <img
+                className="icon"
+                src={
+                  this.state.isCommented
+                    ? "/SVGs/chat-fill.svg"
+                    : "/SVGs/chat.svg"
+                }
                 data-id={this.props.id}
-                onClick={this.postIconClick}
-              ></i>
-              <i className="icon bi bi-send" onClick={this.postIconClick}></i>
+                onClick={this.commentPost}
+              ></img>
+              <img
+                className="icon"
+                src={
+                  this.state.isSent ? "/SVGs/send-fill.svg" : "/SVGs/send.svg"
+                }
+                onClick={this.sentPost}
+              ></img>
             </div>
             <div className="right">
-              <i
-                className="icon bi bi-bookmark"
-                onClick={this.postIconClick}
-              ></i>
+              <img
+                className="icon"
+                src={
+                  this.state.isBookmarked
+                    ? "/SVGs/bookmark-fill.svg"
+                    : "/SVGs/bookmark.svg"
+                }
+                onClick={this.bookmarkPost}
+              ></img>
             </div>
           </div>
           <p className="total-likes">{this.state.likes} likes</p>
@@ -110,7 +161,6 @@ class Post extends Component {
               key={comment.id}
               username={comment.user}
               comment={comment.comment}
-              like={this.postIconClick}
             />
           ))}
         </div>

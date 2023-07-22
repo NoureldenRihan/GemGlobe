@@ -32,7 +32,7 @@ class Info extends Component {
             <button className="profile-btns" onClick={this.followUser}>
               Follow
             </button>
-            <i className="icon bi bi-three-dots"></i>
+            <img className="icon" src="/SVGs/three-dots.svg" />
           </div>
           <div className="stats">
             <h3>
@@ -53,7 +53,7 @@ class Info extends Component {
         <div className="user-info-small">
           <div className="top">
             <h2>GemGlobe</h2>
-            <i className="icon bi bi-three-dots"></i>
+            <img className="icon" src="/SVGs/three-dots.svg" />
             <button className="profile-btns">Message</button>
             <button className="profile-btns" onClick={this.followUser}>
               Follow
